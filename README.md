@@ -1,6 +1,6 @@
 # 🎮 Color Match Game (Flutter + DDD + Clean Architecture)
 
-This is a simple color-based puzzle game built with Flutter. The game uses **Cubit (BLoC)** for state management and follows a hybrid of **Domain-Driven Design (DDD)** and **Clean Architecture** principles for better structure, testability, and scalability.
+This is a simple color-based puzzle game built with Flutter. The game uses **BLoC** for state management and follows a hybrid of **Domain-Driven Design (DDD)** and **Clean Architecture** principles for better structure, testability, and scalability.
 
 ---
 
@@ -19,21 +19,22 @@ This is a simple color-based puzzle game built with Flutter. The game uses **Cub
 lib/
 ├── core/
 │   ├── error/
-│   │   └── failure.dart                    # Common failure handling (e.g., network, parsing)
+│   │   └── failure.dart             # Common failure handling (e.g., network, parsing)
 │   └── utils/
-│       └── timer_util.dart                # Utilities like delay, countdown, etc.
+│   │   └── enum.dart                # Enum, Global function, etc.
+│   └── constants/                   # ColorPalette, Theme, Font, Spacing, etc.
 │
 ├── features/
-│   └── color_game/
-│       ├── domain/
-│       ├── application/
-│       ├── data/
-│       └── presentation/
+│   └── xxx/
+│       ├── domain/                     # entities, repositories_interface
+│       ├── application/                # usecases
+│       ├── data/                       # models, repositories, services
+│       └── presentation/               # UI, Bloc
 │           ├── bloc/
-│           │   ├── color_game_bloc.dart
-│           │   └── color_game_event.dart
-│           │   └── color_game_state.dart
-│           ├── pages/
-│           │   └── color_game_page.dart
+│           │   ├── xxx_bloc.dart
+│           │   └── xxx_event.dart
+│           │   └── xxx_state.dart
+│           ├── screens/
+│           │   └── xxx_screen.dart
 │           └── widgets/
-│               └── color_tile.dart
+│               └── xxx_widget.dart
