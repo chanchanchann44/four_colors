@@ -6,8 +6,6 @@ class ColorPalette {
   static const Color green = Colors.green;
   static const Color blue = Colors.blue;
 
-
-  static const List<String> colorNames = ['red', 'blue', 'yellow', 'green'];
   static const List<Color> displayColors = [
     red,
     yellow,
