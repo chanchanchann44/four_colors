@@ -1,5 +1,5 @@
-import 'package:four_colors/features/color_game/domain/entities/color_option.dart';
+import 'package:four_colors/features/color_game/domain/entities/color_game_entity.dart';
 
 abstract class IColorGameRepository {
-  ColorOption getRandomColorOption();
+  ColorGameEntity getRandomColorOption();
 }

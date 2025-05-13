@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../bloc/color_game_bloc.dart';
 import '../bloc/color_game_event.dart';
 import '../bloc/color_game_state.dart';
-import '../widgets/color_tile.dart';
+import '../widgets/color_box.dart';
 
 class ColorGameScreen extends StatelessWidget {
   const ColorGameScreen({super.key});
@@ -19,10 +19,10 @@ class ColorGameScreen extends StatelessWidget {
               const SizedBox(height: 20),
               Center(
                 child: Text(
-                  state.currentOption.colorName.toUpperCase(),
+                  state.currentOption.result.name.toUpperCase(),
                   style: TextStyle(
                     fontSize: 36,
-                    color: Color(state.currentOption.displayColor),
+                    color: state.currentOption.textColor,
                   ),
                 ),
               ),
@@ -38,18 +38,22 @@ class ColorGameScreen extends StatelessWidget {
                     Expanded(
                       child: Row(
                         children: [
-                          ColorTile(
-                            color: Colors.red,
+                          ColorBox(
+                            colorName: state.currentOption.colorNames[0],
                             onTap:
                                 () => context.read<ColorGameBloc>().add(
-                                  ChooseColor('red'),
+                                  ChooseColor(
+                                    state.currentOption.colorNames[0],
+                                  ),
                                 ),
                           ),
-                          ColorTile(
-                            color: Colors.blue,
+                          ColorBox(
+                            colorName: state.currentOption.colorNames[1],
                             onTap:
                                 () => context.read<ColorGameBloc>().add(
-                                  ChooseColor('blue'),
+                                  ChooseColor(
+                                    state.currentOption.colorNames[1],
+                                  ),
                                 ),
                           ),
                         ],
@@ -58,18 +62,22 @@ class ColorGameScreen extends StatelessWidget {
                     Expanded(
                       child: Row(
                         children: [
-                          ColorTile(
-                            color: Colors.yellow,
+                          ColorBox(
+                            colorName: state.currentOption.colorNames[2],
                             onTap:
                                 () => context.read<ColorGameBloc>().add(
-                                  ChooseColor('yellow'),
+                                  ChooseColor(
+                                    state.currentOption.colorNames[2],
+                                  ),
                                 ),
                           ),
-                          ColorTile(
-                            color: Colors.green,
+                          ColorBox(
+                            colorName: state.currentOption.colorNames[3],
                             onTap:
                                 () => context.read<ColorGameBloc>().add(
-                                  ChooseColor('green'),
+                                  ChooseColor(
+                                    state.currentOption.colorNames[3],
+                                  ),
                                 ),
                           ),
                         ],
